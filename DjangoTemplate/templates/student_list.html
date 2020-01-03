@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student list</title>
+</head>
+<body>
+
+<ul>
+    {% for student in students %}
+
+        <li>{{ student.s_name }}</li>
+
+    {% endfor %}
+
+
+</ul>
+
+<hr>
+
+<ul>
+    {% for student in students %}
+        {% if forloop.counter|divisibleby:3 %}
+            <li style="color: red">{{ student.s_name }}</li>
+            {% else %}
+            <li style="color: blue">{{ student.s_name }}</li>
+        {% endif %}
+
+
+    {% endfor %}
+
+
+</ul>
+
+<hr>
+
+<h3>{{ students.1.s_name }}</h3>
+
+<hr>
+
+<h3>{{ student_dict.hobby }}</h3>
+
+
+
+<ul>
+    {% for student in students %}
+        {% ifequal forloop.counter 5 %}
+            <li style="color: orange">{{ student.s_name }}</li>
+            {% else %}
+            <li style="color: blue">{{ student.s_name }}</li>
+        {% endifequal %}
+    {% endfor %}
+</ul>
+
+<hr>
+
+<p>{{ code|safe }}</p>
+
+</body>
+</html>
